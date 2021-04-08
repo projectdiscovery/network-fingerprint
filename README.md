@@ -71,29 +71,16 @@ apt install -y libpcap-dev
 
 # Running network-fingerprint
 
-To run the tool on a target, just use the following command.
+To run the tool on a target to capture traffic on a port, just use the following command.
+
 ```sh
-▶ network-fingerprint -host hackerone.com
+▶ network-fingerprint -port <port>
 ```
 
-This will run the tool against hackerone.com. There are a number of configuration options that you can pass along with this command. The verbose switch `-v` can be used to display verbose information.
+where `<port>` is the port you want to capture traffic for.
+
+To also filter by IP while running on more common ports like 80, where there is a lot of noise, you can use the ip flag.
 
 ```sh
-▶ naabu -host hackerone.com
-
-                  __
-  ___  ___  ___ _/ /  __ __
- / _ \/ _ \/ _ \/ _ \/ // /
-/_//_/\_,_/\_,_/_.__/\_,_/ v2.0.3
-
-    projectdiscovery.io
-
-[WRN] Use with caution. You are responsible for your actions
-[WRN] Developers assume no liability and are not responsible for any misuse or damage.
-[INF] Running SYN scan with root privileges
-[INF] Found 4 ports on host hackerone.com (104.16.100.52)
-hackerone.com:80
-hackerone.com:443
-hackerone.com:8443
-hackerone.com:8080
+▶ network-fingerprint -port <port> -ip <destination-ip> 
 ```
