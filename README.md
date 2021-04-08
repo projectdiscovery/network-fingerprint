@@ -18,6 +18,7 @@ Capture packet request/response pairs for a port and/or IP to aid in Network pro
     - [From Source](#from-source)
     - [From Github](#from-github)
 - [Running network-fingerprint](#running-network-fingerprint)
+    - [Output Format](#output-format)
 
 
 # Usage
@@ -84,3 +85,28 @@ To also filter by IP while running on more common ports like 80, where there is 
 ```sh
 ▶ network-fingerprint -port <port> -ip <destination-ip> 
 ```
+
+### Output Format
+
+```
+testing@local  ~/projectdiscovery/network-fingerprint   master ± ./network-fingerprint -port 27017 -ip 127.0.0.1
+2021/04/08 23:15:07 network-packet-capture: nuclei-helper by @pdiscoveryio
+2021/04/08 23:15:07 [device] en0 IP: 192.168.1.9
+2021/04/08 23:15:07 [device] bridge100 IP: 192.168.64.1
+2021/04/08 23:15:07 [device] lo0 IP: 127.0.0.1
+```
+
+```json
+{
+  "data": "\ufffd",
+  "hex": "dd",
+  "request": true
+}
+{
+  "data": "?\u0001",
+  "hex": "3f01",
+  "response": true
+}
+```
+
+Requests (Client to Destination) messages have `request: true` while responses (Destination To Client) have `response: true` set to help in easily identifying correct fingerprints. 
