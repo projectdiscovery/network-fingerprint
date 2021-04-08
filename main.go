@@ -34,6 +34,10 @@ func main() {
 	flag.Parse()
 
 	log.Printf("network-fingerprint: nuclei-helper by @pdiscoveryio")
+	if *port == "" {
+		log.Fatalf("No port provided! Exiting.")
+	}
+
 	var bpfFilter string
 	if *ip == "" {
 		bpfFilter = "tcp and port " + *port
