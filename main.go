@@ -33,7 +33,7 @@ type capture struct {
 func main() {
 	flag.Parse()
 
-	log.Printf("network-packet-capture: nuclei-helper by @pdiscoveryio")
+	log.Printf("network-fingerprint: nuclei-helper by @pdiscoveryio")
 	var bpfFilter string
 	if *ip == "" {
 		bpfFilter = "tcp and port " + *port

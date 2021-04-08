@@ -90,7 +90,7 @@ To also filter by IP while running on more common ports like 80, where there is 
 
 ```
 testing@local# ./network-fingerprint -port 27017 -ip 127.0.0.1
-2021/04/08 23:15:07 network-packet-capture: nuclei-helper by @pdiscoveryio
+2021/04/08 23:15:07 network-fingerprint: nuclei-helper by @pdiscoveryio
 2021/04/08 23:15:07 [device] en0 IP: 192.168.1.9
 2021/04/08 23:15:07 [device] bridge100 IP: 192.168.64.1
 2021/04/08 23:15:07 [device] lo0 IP: 127.0.0.1
