@@ -3,8 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
 [![Go Report Card](https://goreportcard.com/badge/github.com/projectdiscovery/network-fingerprint)](https://goreportcard.com/report/github.com/projectdiscovery/network-fingerprint)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/projectdiscovery/network-fingerprint/issues)
-[![GitHub Release](https://img.shields.io/github/release/projectdiscovery/network-fingerprint)](https://github.com/projectdiscovery/naabu/releases)
-[![Follow on Twitter](https://img.shields.io/twitter/follow/pdiscoveryio.svg?logo=twitter)](https://twitter.com/pdiscoveryio)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/pdnuclei.svg?logo=twitter)](https://twitter.com/pdnuclei)
 [![Chat on Discord](https://img.shields.io/discord/695645237418131507.svg?logo=discord)](https://discord.gg/projectdiscovery)
 
 Capture packet request/response pairs for a port and/or IP to aid in Network protocol based Nuclei Templates creation.
@@ -62,6 +61,8 @@ To also filter by IP while running on more common ports like 80, where there is 
 ▶ network-fingerprint -port <port> -ip <destination-ip> 
 ```
 
+Here is a detailed blog showcasing the uses of network-fingerprint - https://blog.projectdiscovery.io/writing-network-templates-with-nuclei/
+
 ### Output Format
 
 ```bash
@@ -85,4 +86,4 @@ testing@local# network-fingerprint -port 27017 -ip 127.0.0.1
 }
 ```
 
-Requests (Client to Destination) messages have `request: true` while responses (Destination To Client) have `response: true` set to help in easily identifying correct fingerprints. 
+Requests (Client to Destination) messages have `request: true` while responses (Destination To Client) have `response: true` set to help in easily identifying correct fingerprints.
