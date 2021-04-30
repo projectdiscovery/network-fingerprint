@@ -16,9 +16,10 @@ import (
 )
 
 var (
-	iface = flag.String("iface", "lo0", "Interface to perform capture on")
-	port  = flag.String("port", "", "Port to capture packets on")
-	ip    = flag.String("ip", "", "IP to filter packets for")
+	iface   = flag.String("iface", "lo0", "Interface to perform capture on")
+	port    = flag.String("port", "", "Port to capture packets on")
+	ip      = flag.String("ip", "", "IP to filter packets for")
+	noColor = flag.Bool("no-color", false, "Do not show colors")
 )
 
 var buffer = int32(65535)
@@ -85,7 +86,10 @@ func main() {
 			if err != nil {
 				log.Printf("[error] could not marshal request: %s\n", err)
 			}
-			data = pretty.Color(pretty.Pretty(data), nil)
+			data = pretty.Pretty(data)
+			if !*noColor {
+				data = pretty.Color(data, nil)
+			}
 			os.Stdout.Write(data)
 		}
 	}
