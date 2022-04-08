@@ -20,28 +20,28 @@ Capture packet request/response pairs for a port and/or IP to aid in Network pro
 ```sh
 ▶ network-fingerprint -h
 ```
-This will display help for the tool. Here are all the switches it supports.
+This will display help for the tool. You can find all the supported switches below:
 
-| Flag  | Description                                     | Example                           |
-| ----- | ----------------------------------------------- | --------------------------------- |
-| iface | Interface to perform capture on (default "lo0") | network-fingerprint -iface eth0   |
-| ip    | IP to filter packets for                        | network-fingerprint -ip 127.0.0.1 |
-| port  | Port to capture packets on                      | network-fingerprint -port 27017   |
+| Flag  | Description                                     | Example                             |
+|-------|-------------------------------------------------|-------------------------------------|
+| iface | Interface to perform capture on (default `lo0`) | `network-fingerprint -iface eth0`   |
+| ip    | IP to filter packets for                        | `network-fingerprint -ip 127.0.0.1` |
+| port  | Port to capture packets on                      | `network-fingerprint -port 27017`   |
 
 
 # Installation Instructions
 
 
-network-fingerprint requires **go1.15+** to install successfully and have `libpcap-dev` installed on the system.
+`network-fingerprint` requires **go1.17+** to install successfully and have `libpcap-dev` installed on the system.
 
-To install libpcap-dev:-
+To install `libpcap-dev`:
 
 ```sh
 ▶ apt install -y libpcap-dev
 ```
 
 ```sh
-▶ GO111MODULE=on go get -v github.com/projectdiscovery/network-fingerprint
+▶ go install -v github.com/projectdiscovery/network-fingerprint
 ```
 
 
