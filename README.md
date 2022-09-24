@@ -41,7 +41,7 @@ To install `libpcap-dev`:
 ```
 
 ```sh
-▶ go install -v github.com/projectdiscovery/network-fingerprint
+▶ go install -v github.com/projectdiscovery/network-fingerprint@latest
 ```
 
 
