@@ -9,10 +9,18 @@
 Capture packet request/response pairs for a port and/or IP to aid in Network protocol based Nuclei Templates creation.
 
 # Resources
-- [Installation Instructions](#installation-instructions)
+- [network-fingerprint](#network-fingerprint)
+- [Resources](#resources)
 - [Usage](#usage)
+- [Installation Instructions](#installation-instructions)
+  - [To install `libpcap-dev`:](#to-install-libpcap-dev)
+    - [On Debian and its derivatives](#on-debian-and-its-derivatives)
+    - [On Arch Based Systems](#on-arch-based-systems)
+    - [On Mac install using homebrew](#on-mac-install-using-homebrew)
+    - [On Windows](#on-windows)
+  - [Installing Network-fingerprint](#installing-network-fingerprint)
 - [Running network-fingerprint](#running-network-fingerprint)
-- [Output Format](#output-format)
+    - [Output Format](#output-format)
 
 
 # Usage
@@ -32,13 +40,38 @@ This will display help for the tool. You can find all the supported switches bel
 # Installation Instructions
 
 
-`network-fingerprint` requires **go1.17+** to install successfully and have `libpcap-dev` installed on the system.
+`network-fingerprint` requires **go1.18+** to install successfully and have `libpcap-dev` installed on the system.
 
-To install `libpcap-dev`:
+## To install `libpcap-dev`:
+
+### On Debian and its derivatives
 
 ```sh
-▶ apt install -y libpcap-dev
+▶ sudo apt install -y libpcap-dev
 ```
+
+### On Arch Based Systems
+
+```sh
+▶ sudo pacman -S libpcap
+```
+
+### On Mac install using homebrew
+
+```sh
+▶ brew install libpcap
+```
+
+### On Windows 
+
+Install Npcap from [here](https://npcap.com)
+
+
+## Installing Network-fingerprint
+
+- Download from Releases
+
+- Install from Source
 
 ```sh
 ▶ go install -v github.com/projectdiscovery/network-fingerprint@latest
